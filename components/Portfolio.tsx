@@ -40,7 +40,7 @@ export default function Portfolio() {
               transition={{ duration: 0.5 }}
               className="text-4xl md:text-6xl font-bold"
             >
-              Hi, I'm Prashant
+              Hi, I&apos;m Prashant
             </motion.h1>
           </motion.div>
         )}
