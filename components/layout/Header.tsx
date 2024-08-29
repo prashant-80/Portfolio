@@ -27,9 +27,9 @@ export default function Header() {
     {[
       { href: "https://github.com/prashant-80", icon: FaGithub, name: "GitHub" },
       { href: "https://www.linkedin.com/in/prashant-singh-1a089824a/", icon: FaLinkedin, name: "LinkedIn" },
-      { href: "https://leetcode.com/your-leetcode-username/", icon: FaCode, name: "LeetCode" },
-      { href: "https://auth.geeksforgeeks.org/user/your-gfg-username/", icon: FaLaptopCode, name: "GeeksforGeeks" },
-      { href: "https://codeforces.com/profile/your-codeforces-username", icon: FaTerminal, name: "Codeforces" },
+      { href: "https://leetcode.com/u/prashant801/", icon: FaCode, name: "LeetCode" },
+      { href: "https://www.geeksforgeeks.org/user/prashantsie5uh/", icon: FaLaptopCode, name: "GeeksforGeeks" },
+      { href: "https://www.codechef.com/users/prashant_53", icon: FaTerminal, name: "CodefChef" },
     ].map((item, index) => (
       <motion.div
         key={index}
