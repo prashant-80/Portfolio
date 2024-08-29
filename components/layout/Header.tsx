@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaLaptopCode, FaTerminal } from 'react-icons/fa';
 import { useScroll } from 'framer-motion'
 
 
@@ -23,35 +23,33 @@ export default function Header() {
     <a href="#projects" className="hover:text-purple-400 transition duration-300">Projects</a>
     <a href="#contact" className="hover:text-purple-400 transition duration-300">Contact</a>
   </div>
-  <div className="flex items-center space-x-4">
-    <motion.a
-      href="https://github.com/prashant-80"
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      className="text-gray-300 hover:text-white transition duration-300"
-    >
-      <FaGithub size={24} />
-    </motion.a>
-    <motion.a
-      href="https://www.linkedin.com/in/prashant-singh-1a089824a/"
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      className="text-gray-300 hover:text-white transition duration-300"
-    >
-      <FaLinkedin size={24} />
-    </motion.a>
-    <motion.a
-      href="https://mail.google.com/mail/u/0/#inbox"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      className="text-gray-300 hover:text-white transition duration-300"
-    >
-      <FaEnvelope size={24} />
-    </motion.a>
+  <div className="flex items-center space-x-5">
+    {[
+      { href: "https://github.com/prashant-80", icon: FaGithub, name: "GitHub" },
+      { href: "https://www.linkedin.com/in/prashant-singh-1a089824a/", icon: FaLinkedin, name: "LinkedIn" },
+      { href: "https://leetcode.com/your-leetcode-username/", icon: FaCode, name: "LeetCode" },
+      { href: "https://auth.geeksforgeeks.org/user/your-gfg-username/", icon: FaLaptopCode, name: "GeeksforGeeks" },
+      { href: "https://codeforces.com/profile/your-codeforces-username", icon: FaTerminal, name: "Codeforces" },
+    ].map((item, index) => (
+      <motion.div
+        key={index}
+        className="relative group"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-300 hover:text-white transition duration-300"
+        >
+          <item.icon size={24} />
+        </a>
+        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          {item.name}
+        </span>
+      </motion.div>
+    ))}
   </div>
 </div>
 </nav>  
